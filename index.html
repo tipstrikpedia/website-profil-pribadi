@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Rizky</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Profil Saya</h1>
+
+        <nav class="navbar">
+            <a href="#tentang">Tentang</a>
+            <a href="#profil">Profil</a>
+            <a href="#pengalaman">Pengalaman</a>
+            <a href="#skill">Skill</a>
+            <a href="#project">Project</a>
+            <a href="#kontak">Kontak</a>
+        </nav>
+
+        <button id="darkModeBtn">Mode Gelap</button>
+
+        <img src="images/todo.jpg" alt="Foto Profil Rizky" width="200">
+
+        <div class="card" id="tentang">
+            <h2>Tentang Saya</h2>
+            <p> Halo, nama saya Rizky. saya sedang belajar Frontend Developer dari dasar. Sayaingin bisa membuat website
+                yang rapi, responsive, dan interaktif.</p>
+        </div>
+
+        <div class="card" id="profil">
+            <h2>Nama</h2>
+            <p>Rizky</p>
+        </div>
+
+        <div class="card">
+            <h2>Umur</h2>
+            <p>20 tahun</p>
+        </div>
+
+        <div class="card">
+            <h2>Asal</h2>
+            <p>Indonesia</p>
+        </div>
+
+        <div class="card">
+            <h2>Pendidikan</h2>
+            <p>SMK</p>
+        </div>
+
+        <div class="card" id="pengalaman">
+            <h2>Pengalaman Kerja</h2>
+            <ul>
+                <li>Pertanian</li>
+                <li>Restoran / warung makan</li>
+                <li>Bengkel otomotif</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Tujuan Belajar</h2>
+            <p>Saya belajar Frontend Developer agar bisa membuat website dan bekerja remote.</p>
+        </div>
+
+        <div class="card" id="skill">
+            <h2>Kemampuan yang Ingin Dipelajari</h2>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>React</li>
+            </ul>
+        </div>
+
+        <div class="card" id="project">
+            <h2>Project Saya</h2>
+
+            <div class="project-list">
+                <div class="project-item">
+                    <h3>Website Profil Pribadi</h3>
+                    <p>
+                        Website sederhana yang di buat menggunakan HTML, CSS, dan JavaScript. Website ini memeiliki navbar,
+                        responsive design, form kontak, dan dark mode.
+                    </p>
+
+                    <a class="project-link" href="#">Lihat Demo</a>
+                    <a class="project-link" href="#">Kode Github</a>
+                </div>
+
+                <div class="project-item">
+                    <h3>Aplikasi Catatan Keuangan</h3>
+                    <p>
+                        Project lattihan berikutnya untuk mencatat pemasukan dan pengeluaran sederhana.
+                    </p>
+
+                    <a class="project-link" href="#">Lihat Demo</a>
+                    <a class="project-link" href="#">Kode Github</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" id="kontak">
+            <h2>Kontak</h2>
+
+            <a class="btn" href="https://wa.me/6281234567890">WhatsApp</a>
+            <a class="btn" href="https://www.linkedin.com/in/rizky">LinkedIn</a>
+
+            <h3>Kirim pesan</h3>
+
+            <form>
+                <label for="nama">Nama:</label>
+                <input type="text" id="nama" placeholder="Masukkan nama Anda" name="nama">
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+
+                <label for="pesan">Pesan:</label>
+                <textarea id="pesan" placeholder="Tulis pesan"></textarea>
+
+                <button type="submit">Kirim</button>
+                <p id="statusPesan"></p>
+            </form>
+
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Rizky. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
