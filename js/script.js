@@ -24,7 +24,7 @@ form.addEventListener('submit', function (event) {
         return;
     }
 
-    statusPesan.innerText = "Thangk you " + inputNama.value + ", your message has been received";
+    statusPesan.innerText = "Thank you " + inputNama.value + ", your message has been received";
     statusPesan.style.color = 'green';
 
     form.reset();
@@ -38,17 +38,34 @@ const darkModeBtn = document.querySelector('#darkModeBtn');
 
 if (localStorage.getItem('theme') === 'dark') {
     document.body.classList.add('dark-mode');
-    darkModeBtn.innerText = 'Dark Mode';
+    darkModeBtn.innerText = 'Light Mode';
 }
 
 darkModeBtn.addEventListener('click', function () {
     document.body.classList.toggle('dark-mode');
 
     if (document.body.classList.contains('dark-mode')) {
-        darkModeBtn.innerText = 'Dark Mode';
+        darkModeBtn.innerText = 'Light Mode';
         localStorage.setItem('theme', 'dark');
     } else {
         darkModeBtn.innerText = 'Dark Mode';
         localStorage.setItem('theme', 'light');
     }
+});
+
+const backToTopBtn = document.querySelector("#backToTopBtn");
+
+window.addEventListener("scroll", function () {
+    if (window.scrollY > 300) {
+        backToTopBtn.classList.add("show");
+    } else {
+        backToTopBtn.classList.remove("show");
+    }
+});
+
+backToTopBtn.addEventListener("click", function () {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 });

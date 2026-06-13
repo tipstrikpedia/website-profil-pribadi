@@ -303,6 +303,47 @@ footer p {
     font-size: 14px;
 }
 
+#backToTopBtn {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 45px;
+    height: 45px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: #2563eb;
+    color: white;
+    font-size: 22px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: 0.3s;
+    z-index: 1000;
+}
+
+#backToTopBtn.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+#backToTopBtn.hover {
+    background-color: #1d4ed8;
+}
+
+.dark-mode #backToTopBtn {
+    background-color: #3b82f6;
+}
+
+@media (max-width: 600px) {
+    #backToTopBtn {
+        right: 12px;
+        bottom: 12px;
+        width: 42px;
+        height: 42px;
+    }
+}
+
 /* Responsive HP */
 @media (max-width: 600px) {
     body {
