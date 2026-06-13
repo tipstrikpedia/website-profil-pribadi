@@ -1,133 +1,137 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profil Rizky</title>
+    <title>Rizky | Frontend Developer Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
     <div class="container">
-        <h1>Website Portofolio Saya</h1>
+        <h1>My Portfolio Website</h1>
 
         <nav class="navbar">
-            <a href="#tentang">Tentang</a>
-            <a href="#profil">Profil</a>
-            <a href="#pengalaman">Pengalaman</a>
-            <a href="#skill">Skill</a>
-            <a href="#project">Project</a>
-            <a href="#kontak">Kontak</a>
+            <a href="#about">About</a>
+            <a href="#profile">Profile</a>
+            <a href="#experience">Experience</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
         </nav>
 
-        <button id="darkModeBtn">Mode Gelap</button>
+        <button id="darkModeBtn" type="button">Dark Mode</button>
 
-        <img src="images/todo.jpg" alt="Foto Profil Rizky" width="200">
+        <img src="images/todo.jpg" alt="Rizky's profile photo" width="200">
 
-        <div class="card" id="tentang">
-            <h2>Tentang Saya</h2>
-            <p> Halo, nama saya Rizky. saya sedang belajar Frontend Developer dari dasar. Sayaingin bisa membuat website
-                yang rapi, responsive, dan interaktif.</p>
+        <div class="card" id="about">
+            <h2>About Me</h2>
+            <p>
+                Hello, my name is Rizky. I am learning frontend development from the basics.
+                I want to build clean, responsive, and interactive websites.
+            </p>
         </div>
 
-        <div class="card" id="profil">
-            <h2>Nama</h2>
-            <p>Rizky</p>
+        <div class="card" id="profile">
+            <h2>Profile</h2>
+            <p><strong>Name:</strong> Rizky</p>
+            <p><strong>Age:</strong> 20 years old</p>
+            <p><strong>Location:</strong> Indonesia</p>
+            <p><strong>Education:</strong> Vocational High School</p>
         </div>
 
-        <div class="card">
-            <h2>Umur</h2>
-            <p>20 tahun</p>
-        </div>
-
-        <div class="card">
-            <h2>Asal</h2>
-            <p>Indonesia</p>
-        </div>
-
-        <div class="card">
-            <h2>Pendidikan</h2>
-            <p>SMK</p>
-        </div>
-
-        <div class="card" id="pengalaman">
-            <h2>Pengalaman Kerja</h2>
+        <div class="card" id="experience">
+            <h2>Work Experience</h2>
             <ul>
-                <li>Pertanian</li>
-                <li>Restoran / warung makan</li>
-                <li>Bengkel otomotif</li>
+                <li>Agriculture</li>
+                <li>Restaurant / food stall</li>
+                <li>Automotive workshop</li>
             </ul>
         </div>
 
         <div class="card">
-            <h2>Tujuan Belajar</h2>
-            <p>Saya belajar Frontend Developer agar bisa membuat website dan bekerja remote.</p>
+            <h2>Learning Goal</h2>
+            <p>
+                I am learning frontend development so I can build professional websites
+                and pursue remote work opportunities.
+            </p>
         </div>
 
-        <div class="card" id="skill">
-            <h2>Kemampuan yang Ingin Dipelajari</h2>
+        <div class="card" id="skills">
+            <h2>Skills</h2>
             <ul>
                 <li>HTML</li>
                 <li>CSS</li>
                 <li>JavaScript</li>
-                <li>React</li>
+                <li>Responsive Design</li>
+                <li>Git and GitHub</li>
+                <li>React — currently learning</li>
             </ul>
         </div>
 
-        <div class="card" id="project">
-            <h2>Project Saya</h2>
+        <div class="card" id="projects">
+            <h2>My Projects</h2>
 
             <div class="project-list">
                 <div class="project-item">
-                    <h3>Website Profil Pribadi</h3>
+                    <h3>Personal Portfolio Website</h3>
                     <p>
-                        Website sederhana yang di buat menggunakan HTML, CSS, dan JavaScript. Website ini memeiliki navbar,
-                        responsive design, form kontak, dan dark mode.
+                        A personal portfolio website built with HTML, CSS, and JavaScript.
+                        It includes a sticky navbar, responsive design, a contact form,
+                        dark mode, and localStorage support.
                     </p>
 
-                    <a class="project-link" href="https://tipstrikpedia.github.io/website-profil-pribadi/" target="_blank">Lihat Demo</a>
-                    <a class="project-link" href="https://github.com/tipstrikpedia/website-profil-pribadi" target="_blank">Kode Github</a>
+                    <a class="project-link"
+                        href="https://tipstrikpedia.github.io/website-profil-pribadi/"
+                        target="_blank"
+                        rel="noopener noreferrer">Live Demo</a>
+
+                    <a class="project-link"
+                        href="https://github.com/tipstrikpedia/website-profil-pribadi"
+                        target="_blank"
+                        rel="noopener noreferrer">GitHub Code</a>
                 </div>
 
                 <div class="project-item">
-                    <h3>Aplikasi Catatan Keuangan</h3>
+                    <h3>Finance Tracker Application</h3>
                     <p>
-                        Project lattihan berikutnya untuk mencatat pemasukan dan pengeluaran sederhana.
+                        A future project for recording income and expenses.
                     </p>
 
-                    <a class="project-link" href="#" target="_blank">Segera Hadir</a>
-                    <a class="project-link" href="#" target="_blank">Segera Hadir</a>
+                    <span class="project-link">Coming Soon</span>
                 </div>
             </div>
         </div>
 
-        <div class="card" id="kontak">
-            <h2>Kontak</h2>
+        <div class="card" id="contact">
+            <h2>Contact</h2>
 
-            <a class="btn" href="https://wa.me/6281234567890">WhatsApp</a>
-            <a class="btn" href="https://www.linkedin.com/in/rizky">LinkedIn</a>
+            <a class="btn" href="https://wa.me/6281234567890"
+                target="_blank" rel="noopener noreferrer">WhatsApp</a>
 
-            <h3>Kirim pesan</h3>
+            <a class="btn" href="https://www.linkedin.com/in/rizky"
+                target="_blank" rel="noopener noreferrer">LinkedIn</a>
 
-            <form>
-                <label for="nama">Nama:</label>
-                <input type="text" id="nama" placeholder="Masukkan nama Anda" name="nama">
+            <h3>Send a Message</h3>
+
+            <form id="contactForm">
+                <label for="nama">Name:</label>
+                <input type="text" id="nama" name="nama" placeholder="Enter your name">
 
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email">
+                <input type="email" id="email" name="email" placeholder="Enter your email">
 
-                <label for="pesan">Pesan:</label>
-                <textarea id="pesan" placeholder="Tulis pesan"></textarea>
+                <label for="pesan">Message:</label>
+                <textarea id="pesan" name="pesan" placeholder="Write your message"></textarea>
 
-                <button type="submit">Kirim</button>
+                <button type="submit">Send</button>
                 <p id="statusPesan"></p>
             </form>
-
         </div>
 
         <footer>
-            <p>&copy; 2024 Rizky. All rights reserved.</p>
+            <p>&copy; 2026 Rizky. Built with HTML, CSS, and JavaScript.</p>
         </footer>
     </div>
 

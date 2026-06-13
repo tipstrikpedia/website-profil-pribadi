@@ -8,23 +8,23 @@ form.addEventListener('submit', function (event) {
     event.preventDefault();
 
     if (inputNama.value.trim() === '') {
-        statusPesan.innerText = 'Nama tidak boleh kosong.';
+        statusPesan.innerText = 'Name cannot be empty.';
         statusPesan.style.color = 'red';
 
         return;
     }
     if (inputEmail.value.trim() === '') {
-        statusPesan.innerText = 'Email tidak boleh kosong.';
+        statusPesan.innerText = 'Email cannot be empty.';
         statusPesan.style.color = 'red';
         return;
     }
     if (inputPesan.value.trim() === '') {
-        statusPesan.innerText = 'Pesan tidak boleh kosong.';
+        statusPesan.innerText = 'message cannot be empty.';
         statusPesan.style.color = 'red';
         return;
     }
 
-    statusPesan.innerText = " Terima kasih " + inputNama.value + ", Pesan kamu sudah diterima";
+    statusPesan.innerText = "Thangk you " + inputNama.value + ", your message has been received";
     statusPesan.style.color = 'green';
 
     form.reset();
@@ -38,17 +38,17 @@ const darkModeBtn = document.querySelector('#darkModeBtn');
 
 if (localStorage.getItem('theme') === 'dark') {
     document.body.classList.add('dark-mode');
-    darkModeBtn.innerText = 'Mode Terang';
+    darkModeBtn.innerText = 'Dark Mode';
 }
 
 darkModeBtn.addEventListener('click', function () {
     document.body.classList.toggle('dark-mode');
 
     if (document.body.classList.contains('dark-mode')) {
-        darkModeBtn.innerText = 'Mode Terang';
+        darkModeBtn.innerText = 'Dark Mode';
         localStorage.setItem('theme', 'dark');
     } else {
-        darkModeBtn.innerText = 'Mode Gelap';
+        darkModeBtn.innerText = 'Dark Mode';
         localStorage.setItem('theme', 'light');
     }
 });
