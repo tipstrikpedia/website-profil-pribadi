@@ -28,10 +28,32 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     links.querySelectorAll('a').forEach(function (link) {
-        link.addEventListener('click', function () {
-            if (mobileQuery.matches) {
-                setMenuState(false);
+        link.addEventListener('click', function (event) {
+            const selector = link.getAttribute('href');
+
+            if (!mobileQuery.matches || !selector || !selector.startsWith('#')) {
+                return;
             }
+
+            const target = document.querySelector(selector);
+
+            if (!target) {
+                return;
+            }
+
+            event.preventDefault();
+            setMenuState(false);
+
+            window.setTimeout(function () {
+                const navbarHeight = navbar.getBoundingClientRect().height;
+                const targetTop = target.getBoundingClientRect().top + window.scrollY;
+                const destination = targetTop - navbarHeight - 16;
+
+                window.scrollTo({
+                    top: destination,
+                    behavior: 'smooth'
+                });
+            }, 350);
         });
     });
 
