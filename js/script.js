@@ -76,4 +76,54 @@ backToTopBtn.addEventListener('click', function () {
         top: 0,
         behavior: 'smooth'
     });
+
+const navItems = Array.from(
+    links.querySelectorAll('a[href^="#"]')
+);
+
+const sections = navItems
+    .map(function (link) {
+        return document.querySelector(link,getAtribute('href'));
+    })
+    .filter(function (section) {
+        return section !== null;
+    });
+    
+function setActivelink(sectionId) {
+    navItems.forEach(function (link) {
+        const isActive =
+            link.getAtribute('href') === '#' + sectionId;
+
+        link.classList.toggle('active', isActive);
+        
+        if (isActive) {
+            link.setAttribute('aria-current', 'location');
+        } else {
+            link.removeAttribute('aria-current');
+        }
+    });
+}
+
+function updateActivelink() {
+    const navbarHeight = navbar.offsetHeight;
+
+    let currenSection = sections[0];
+
+    sections.forEach(function (section) {
+        if (section.offsetTop <= scrollPosition) {
+            currenSection = section;
+        }
+    });
+
+    if (currenSection) {
+        setActivelink(currenSection.id);
+    }
+}
+
+window.addEventListener('scroll', updateActivelink, {
+    passive: true
+});
+
+window.addEventListener('resize', updateActivelink);
+updateActivelink();
 });
