@@ -28,10 +28,26 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     links.querySelectorAll('a').forEach(function (link) {
-        link.addEventListener('click', function () {
-            if (mobileQuery.matches) {
-                setMenuState(false);
+        link.addEventListener('click', function (event) {
+            const selector = link.getAttribute('href');
+
+            if (!mobileQuery.matches || !selector || !selector.startsWith('#')) {
+                return;
             }
+
+            const target = document.querySelector(selector);
+
+            if (!target) {
+                return;
+            }
+
+            event.preventDefault();
+            setMenuState(false);
+
+            window.setTimeout(function () {
+                const top = target.getBoundingClientRect().top + window.scrollY - navbar.offsetHeight - 12;
+                window.scrollTo({ top: top, behavior: 'smooth' });
+            }, 320);
         });
     });
 
