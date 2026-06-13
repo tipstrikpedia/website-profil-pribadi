@@ -91,27 +91,68 @@ button:hover,
     position: sticky;
     top: 0;
     z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
     background-color: #ffffff;
-    text-align: center;
     margin-bottom: 20px;
-    padding: 10px;
+    padding: 10px 15px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(15, 23, 42, 0.12);
 }
 
-.navbar a {
+.brand {
+    color: #1e3a8a;
+    font-size: 20px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.links {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.links a {
     display: inline-block;
-    margin: 5px;
-    padding: 8px 12px;
+    padding: 8px 10px;
     background-color: #e0e7ff;
     color: #1e3a8a;
     border-radius: 8px;
     text-decoration: none;
 }
 
-.navbar a:hover {
+.links a:hover {
     background-color: #2563eb;
     color: white;
+}
+
+.navbar-toggle {
+    display: none;
+    padding: 0;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+}
+
+#about,
+#profile,
+#experience,
+#skills,
+#projects,
+#contact {
+    scroll-margin-top: 100px;
 }
 
 #darkModeBtn {
@@ -165,92 +206,6 @@ form button {
 #statusPesan {
     margin-top: 10px;
     font-weight: bold;
-}
-
-/* Dark Mode */
-.dark-mode {
-    background-color: #0f172a;
-    color: #e5e7eb;
-}
-
-.dark-mode .container {
-    background-color: #111827;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
-}
-
-.dark-mode h1 {
-    color: #93c5fd;
-}
-
-.dark-mode h2,
-.dark-mode h3,
-.dark-mode p,
-.dark-mode li,
-.dark-mode label {
-    color: #e5e7eb;
-}
-
-.dark-mode h2 {
-    border-bottom-color: #60a5fa;
-}
-
-.dark-mode .card {
-    background-color: #1f2937;
-    border-color: #374151;
-}
-
-.dark-mode .card:hover {
-    background-color: #273549;
-}
-
-.dark-mode .project-item {
-    background-color: #111827;
-    border-color: #374151;
-}
-
-.dark-mode .project-item h3 {
-    color: #93c5fd;
-}
-
-.dark-mode .project-link {
-    background-color: #3b82f6;
-    color: white;
-}
-
-.dark-mode .project-link:hover {
-    background-color: #2563eb;
-}
-
-.dark-mode footer {
-    border-top-color: #374151;
-    color: #cbd5e1;
-}
-
-.dark-mode .navbar {
-    background-color: #111827;
-}
-
-.dark-mode .navbar a {
-    background-color: #1f2937;
-    color: #dbeafe;
-}
-
-.dark-mode .navbar a:hover {
-    background-color: #2563eb;
-    color: white;
-}
-
-.dark-mode input,
-.dark-mode textarea {
-    background-color: #111827;
-    color: #f9fafb;
-    border-color: #4b5563;
-}
-
-.dark-mode input:focus,
-.dark-mode textarea:focus {
-    border-color: #60a5fa;
-    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2);
 }
 
 .project-list {
@@ -327,24 +282,122 @@ footer p {
     transform: translateY(0);
 }
 
-#backToTopBtn.hover {
+#backToTopBtn:hover {
     background-color: #1d4ed8;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #f59e0b;
+    outline-offset: 3px;
+}
+
+/* Dark mode */
+.dark-mode {
+    background-color: #0f172a;
+    color: #e5e7eb;
+}
+
+.dark-mode .container {
+    background-color: #111827;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+}
+
+.dark-mode h1 {
+    color: #93c5fd;
+}
+
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode p,
+.dark-mode li,
+.dark-mode label {
+    color: #e5e7eb;
+}
+
+.dark-mode h2 {
+    border-bottom-color: #60a5fa;
+}
+
+.dark-mode .card {
+    background-color: #1f2937;
+    border-color: #374151;
+}
+
+.dark-mode .card:hover {
+    background-color: #273549;
+}
+
+.dark-mode .navbar {
+    background-color: #111827;
+}
+
+.dark-mode .brand {
+    color: #93c5fd;
+}
+
+.dark-mode .links a {
+    background-color: #1f2937;
+    color: #dbeafe;
+}
+
+.dark-mode .links a:hover {
+    background-color: #2563eb;
+    color: white;
+}
+
+.dark-mode .navbar-toggle {
+    background-color: #1f2937;
+    color: #dbeafe;
+    border-color: #4b5563;
+}
+
+.dark-mode .project-item {
+    background-color: #111827;
+    border-color: #374151;
+}
+
+.dark-mode .project-item h3 {
+    color: #93c5fd;
+}
+
+.dark-mode .project-link {
+    background-color: #3b82f6;
+    color: white;
+}
+
+.dark-mode .project-link:hover {
+    background-color: #2563eb;
+}
+
+.dark-mode footer {
+    border-top-color: #374151;
+}
+
+.dark-mode footer p {
+    color: #cbd5e1;
+}
+
+.dark-mode input,
+.dark-mode textarea {
+    background-color: #111827;
+    color: #f9fafb;
+    border-color: #4b5563;
+}
+
+.dark-mode input:focus,
+.dark-mode textarea:focus {
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2);
 }
 
 .dark-mode #backToTopBtn {
     background-color: #3b82f6;
 }
 
-@media (max-width: 600px) {
-    #backToTopBtn {
-        right: 12px;
-        bottom: 12px;
-        width: 42px;
-        height: 42px;
-    }
-}
-
-/* Responsive HP */
+/* Responsive */
 @media (max-width: 600px) {
     body {
         padding: 10px;
@@ -377,8 +430,60 @@ footer p {
         margin: 10px 0;
     }
 
-    .navbar a {
+    .navbar {
+        flex-wrap: wrap;
+        padding: 8px 10px;
+    }
+
+    .navbar-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        font-size: 22px;
+        background-color: #2563eb;
+        color: white;
+    }
+
+    .links {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 6px;
+        overflow: hidden;
+        max-height: 500px;
+        opacity: 1;
+        transition: max-height 0.3s ease, opacity 0.2s ease;
+    }
+
+    .links a {
         display: block;
-        margin: 8px 0;
+        width: 100%;
+        box-sizing: border-box;
+        margin: 0;
+        text-align: center;
+    }
+
+    .navbar.collapsed .links {
+        max-height: 0;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    #about,
+    #profile,
+    #experience,
+    #skills,
+    #projects,
+    #contact {
+        scroll-margin-top: 90px;
+    }
+
+    #backToTopBtn {
+        right: 12px;
+        bottom: 12px;
+        width: 42px;
+        height: 42px;
     }
 }

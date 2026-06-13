@@ -8,7 +8,7 @@
     <meta name="description"
         content="Rizky's frontend developer portfolio featuring HTML, CSS, JavaScript, responsive design, and GitHub projects.">
 
-        <meta name="author" content="Rizky">
+    <meta name="author" content="Rizky">
 
     <title>Rizky | Frontend Developer Portfolio</title>
 
@@ -20,18 +20,29 @@
     <div class="container">
         <h1>My Portfolio Website</h1>
 
-        <nav class="navbar">
-            <a href="#about">About</a>
-            <a href="#profile">Profile</a>
-            <a href="#experience">Experience</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
+        <nav class="navbar" aria-label="Main navigation">
+            <div class="brand">Rizky</div>
+
+            <button class="navbar-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+                <span aria-hidden="true">☰</span>
+                <span class="sr-only">Toggle navigation</span>
+            </button>
+
+            <div id="nav-links" class="links">
+                <a href="#about">About</a>
+                <a href="#profile">Profile</a>
+                <a href="#experience">Experience</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
         </nav>
 
-        <button id="darkModeBtn" type="button">Dark Mode</button>
+        <button id="darkModeBtn" type="button" aria-label="Switch between light and dark mode" aria-pressed="false">
+            Dark Mode
+        </button>
 
-        <img src="images/todo.jpg" alt="Rizky's profile photo" width="200">
+        <img src="images/todo.jpg" alt="Portrait of Rizky, an aspiring frontend developer" width="200">
 
         <div class="card" id="about">
             <h2>About Me</h2>
@@ -100,10 +111,7 @@
 
                 <div class="project-item">
                     <h3>Finance Tracker Application</h3>
-                    <p>
-                        A future project for recording income and expenses.
-                    </p>
-
+                    <p>A future project for recording income and expenses.</p>
                     <span class="project-link">Coming Soon</span>
                 </div>
             </div>
@@ -113,24 +121,22 @@
             <h2>Contact</h2>
 
             <a class="btn" href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-
-            <a class="btn" href="https://www.linkedin.com/in/rizky" target="_blank"
-                rel="noopener noreferrer">LinkedIn</a>
+            <a class="btn" href="https://www.linkedin.com/in/rizky" target="_blank" rel="noopener noreferrer">LinkedIn</a>
 
             <h3>Send a Message</h3>
 
             <form id="contactForm">
                 <label for="nama">Name:</label>
-                <input type="text" id="nama" name="nama" placeholder="Enter your name">
+                <input type="text" id="nama" name="nama" placeholder="Enter your name" autocomplete="name">
 
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email">
+                <input type="email" id="email" name="email" placeholder="Enter your email" autocomplete="email">
 
                 <label for="pesan">Message:</label>
                 <textarea id="pesan" name="pesan" placeholder="Write your message"></textarea>
 
                 <button type="submit">Send</button>
-                <p id="statusPesan"></p>
+                <p id="statusPesan" role="status" aria-live="polite"></p>
             </form>
         </div>
 
@@ -139,11 +145,10 @@
         </footer>
     </div>
 
-    <button id="backToTopBtn" type="button" aria-label="Back to Top">
-        ↑
-    </button>
+    <button id="backToTopBtn" type="button" aria-label="Back to Top">↑</button>
 
     <script src="js/script.js"></script>
+    <script src="js/navbar.js"></script>
 </body>
 
 </html>
